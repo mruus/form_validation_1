@@ -27,8 +27,11 @@ function checkEmail(id) {
       labelEl.style.top = "50%";
       return false;
     }
-    let gmailStringChecker = '@gmail.com';
-    if (!this.value.includes(gmailStringChecker) || this.value.length <= gmailStringChecker.length ) {
+    let gmailStringChecker = "@gmail.com";
+    if (
+      !this.value.includes(gmailStringChecker) ||
+      this.value.length <= gmailStringChecker.length
+    ) {
       this.style.borderColor = "red";
       this.style.color = "red";
       labelEl.style.color = "red";
