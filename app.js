@@ -27,11 +27,9 @@ function checkEmail(id) {
       labelEl.style.top = "50%";
       return false;
     }
+
     let gmailStringChecker = "@gmail.com";
-    if (
-      !this.value.includes(gmailStringChecker) ||
-      this.value.length <= gmailStringChecker.length
-    ) {
+    if (!this.value.includes(gmailStringChecker)) {
       this.style.borderColor = "red";
       this.style.color = "red";
       labelEl.style.color = "red";
@@ -39,6 +37,16 @@ function checkEmail(id) {
       labelEl.style.padding = "0px 10px";
       return false;
     }
+
+    if (this.value.length <= gmailStringChecker.length) {
+      this.style.borderColor = "red";
+      this.style.color = "red";
+      labelEl.style.color = "red";
+      labelEl.style.top = "0";
+      labelEl.style.padding = "0px 10px";
+      return false;
+    }
+
     this.style.borderColor = "blue";
     this.style.color = "blue";
     labelEl.style.color = "blue";
